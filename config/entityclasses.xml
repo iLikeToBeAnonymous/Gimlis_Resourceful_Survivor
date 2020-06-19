@@ -1,0 +1,19 @@
+<!-- If you're a survivalist, you'd already know how to make goldenrod tea, right? -->
+
+<configs>
+
+	<setattribute xpath="/entity_classes/entity_class[@name='playerMale']/property[@name='ItemsOnEnterGame.GameModeSurvival']" name="value">
+		Survivalist Library,drinkJarRedTea,foodCanChili,medicalFirstAidBandage,meleeToolTorch,keystoneBlock,noteDuke01
+	</setattribute>
+    <setattribute xpath="/entity_classes/entity_class[@name='playerMale']/property[@name='ItemsOnEnterGame.GameModeSurvivalSP']" name="value">
+    	Survivalist Library,drinkJarRedTea,foodCanChili,medicalFirstAidBandage,meleeToolTorch,keystoneBlock
+    </setattribute>
+    <setattribute xpath="/entity_classes/entity_class[@name='playerMale']/property[@name='ItemsOnEnterGame.GameModeSurvivalMP']" name="value">
+    	Survivalist Library,drinkJarRedTea,foodCanChili,medicalFirstAidBandage,meleeToolTorch,keystoneBlock
+    </setattribute>
+
+</configs>
+
+
+
+	<!--<property name="MapIcon" value="map_supply_crate"/> -->  <!-- If set, this entity shows on the map, like with a motorcycle or a bedroll -->

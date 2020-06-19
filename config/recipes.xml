@@ -1,0 +1,27 @@
+<configs>
+	<append xpath="/recipes">
+
+		<recipe name="Survivalist's Flint Blade" count="1" tags="perkJavelinMaster">
+			<ingredient name="resourceRockSmall" count="5"/>
+			<ingredient name="resourceYuccaFibers" count="5"/>
+		</recipe>
+
+
+		<recipe name="Shaved Wood Fletchings" count="4">
+			<ingredient name="resourceWood" count="1"/>
+		</recipe>
+
+		<recipe name="ammoArrowStone" count="1"> <!-- Just adds an additional recipe for an existing vanilla item -->
+			<ingredient name="resourceRockSmall" count="1"/>
+			<ingredient name="resourceWood" count="1"/>
+			<ingredient name="Shaved Wood Fletchings" count="3"/>
+		</recipe>
+
+		<recipe name="Survivalist Arrow Rest" craft_tool="meleeToolStoneAxe" count="1">
+			<ingredient name="resourceWood" count="5"/>
+		</recipe>
+
+
+
+	</append>
+</configs>

@@ -1,0 +1,70 @@
+<configs>
+	<append xpath="/item_modifiers">
+
+<!-- ############################################## -->
+<!-- ############################################## -->
+
+        <item_modifier id="survivalistLappedFlint" name="Survivalist's Flint Blade" installable_tags="axe,thrownWeapon" modifier_tags="damage" type="attachment">
+            <property name="CustomIcon" value="modMeleeDiamondTip"/>
+            <property name="CustomIconTint" value="ffb0b9"/>
+            <property name="Stacknumber" value="1"/> <property name="Group" value="Ammo/Weapons,Basics,Mods"/>
+            <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+            <property name="Material" value="Mstone"/>
+
+            <effect_group tiered="false">
+                <passive_effect name="StaminaLoss" operation="base_set" value="1" tags="primary"/>
+                <passive_effect name="MaxRange" operation="perc_add" value=".25"/>
+                <passive_effect name="BlockRange" operation="perc_add" value=".25"/>
+                <passive_effect name="AttacksPerMinute" operation="base_set" value="150"/>
+                <passive_effect name="EntityDamage" operation="perc_add" value="3.1"/> 
+                <passive_effect name="BlockDamage" operation="perc_add" value=".1"/>
+                <passive_effect name="DegradationMax" operation="perc_add" value=".5"/>
+            </effect_group>
+
+            <effect_group tiered="false">
+                <requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="99"/>
+                    <triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" buff="buffInjuryBleedingZombie"/>
+                    <triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffInjuryKnockdown01"/>
+                    <triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" buff="buffInjuryCrippled01"/>
+            </effect_group>
+
+            <effect_group tiered="false" name="Always extend bleeding">
+                <requirement name="HasBuff" target="other" buff="buffInjuryBleeding"/>
+                    <triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" buff="buffInjuryBleeding"/>
+                    <triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" buff="buffInjuryBleeding"/>
+            </effect_group>
+
+        </item_modifier>
+
+<!-- ################################################################################################ -->
+
+        <item_modifier name="Survivalist Arrow Rest" installable_tags="bow" modifier_tags="accuracy" type="attachment">
+            <property name="Stacknumber" value="1"/> <property name="Group" value="Ammo/Weapons,Basics,Mods"/>
+
+            <property name="CustomIcon" value="modMeleeFortifyingGrip"/> <property name="CustomIconTint" value="ffb0b9"/>            
+            <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+            <property name="Material" value="Mwood"/>
+
+            <effect_group tiered="false">
+                <passive_effect name="DamageFalloffRange" operation="perc_add" value=".2"/>
+                <passive_effect name="MaxRange" operation="perc_add" value=".2"/>
+                <passive_effect name="ProjectileVelocity" operation="perc_add" value=".9"/>
+
+                <passive_effect name="SpreadMultiplierHip" operation="perc_subtract" value="0.3"/>
+                <passive_effect name="SpreadMultiplierAiming" operation="perc_subtract" value="0.5"/>
+                <!-- <passive_effect name="WeaponHandling" operation="perc_add" value="-.4"/> -->
+
+                <passive_effect name="KickDegreesVerticalMin" operation="perc_subtract" value="0.9"/>
+                <passive_effect name="KickDegreesVerticalMax" operation="perc_subtract" value="0.9"/>
+                <passive_effect name="KickDegreesHorizontalMin" operation="perc_subtract" value="0.2"/>
+                <passive_effect name="KickDegreesHorizontalMax" operation="perc_subtract" value="0.2"/>
+
+                <passive_effect name="EntityDamage" operation="perc_add" value="2"/>
+
+            </effect_group>
+            <property name="PickupJournalEntry" value="augmentGunsTip"/>
+        </item_modifier>
+
+
+    </append>
+</configs>
