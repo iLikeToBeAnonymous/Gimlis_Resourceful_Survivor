@@ -1,0 +1,8 @@
+Key,File,Type,english,Context / Alternate Text
+
+keystoneBlockPortableGMLI,blocks,Terrain,"[FF8C00]Nomad's Land Claim Block[-]"
+keystoneBlockPortableGMLIDesc,blocks,Terrain,"1/8-size, portable land claim block for survivors whose home is on the road. Just break it to take it with you.\n\nGreat for camping and being able to retrieve your firepit and other workstations (just make sure to pick up the block [U]LAST[/U])."
+
+workstationNomadsGMLI,blocks,Terrain,"[FF8C00]Nomad's Workstation[-]"
+
+workstationNomadsGMLIDesc,blocks,Terrain,"Workbenches are a luxury. For a more resourceful survivor, crafting needs to be done on-the-go.\n\nCan either be picked up gracefully, or beaten into submission."

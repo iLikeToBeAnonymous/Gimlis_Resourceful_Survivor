@@ -1,0 +1,17 @@
+<Config>
+	<append xpath="/xui/ruleset">
+		<!-- From post by Clockwork Orange @ https://community.7daystodie.com/topic/9304-adding-custom-workstations/-->
+		<!-- "window_group name" is the name of the block in "blocks.xml with the prefix "workstation_" -->
+		<!-- The string val for "controller" is common amongst all workbenches in the vanilla xui.xml -->
+		<window_group name="workstation_workstationNomadsGMLI" controller="XUiC_WorkstationWindowGroup">
+
+			<window name="windowCraftingList"/>
+			<window name="craftingInfoPanel"/>
+			<window name="windowCraftingQueue"/>
+			<window name="windowToolsWorkstationNomadsGMLI" /> <!-- Seems to be the key linking this to the entry in the windows.xml file -->
+			<window name="windowOutput" />
+			<window name="windowNonPagingHeader" />
+			<!-- <window name="windowPagingHeader" /> --> <!-- Makes menu fold on top of itself and freezes game on exit. -->
+		</window_group>
+	</append>
+</Config>
