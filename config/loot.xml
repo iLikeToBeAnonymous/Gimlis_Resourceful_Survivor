@@ -42,13 +42,11 @@ From studying ExtremeLurker's code, I've learned:
 		
 		
 		<lootgroup name="test1Container1GroupGMLI" count="all">
-			<item name="ammo762mmBulletBall" count="150" /> <!-- Only stackable items can have a count, and it can't violate the stack size for that item -->
-			<item name="meleeToolPickaxeSteel" /> <!-- This has a max stack of 1, so count isn't needed -->
-			<item name="gunAK47" />
-			<item name="ammoBundleArrowSteelAP" count="5"/>
+			<item name="ammoBundleArrowSteelAP" count="5"/> <!-- Only stackable items can have a count, and it can't violate the stack size for that item -->
+			<item name="forge" /> <!-- This has a max stack of 1, so count isn't needed -->
 		</lootgroup>
 		
-		<lootcontainer id="707" count="1" size="8,8" destroy_on_close="true" sound_open="SupplyDrops/open_supply_crate" sound_close="SupplyDrops/close_supply_crate" loot_quality_template="alwaysMaxQualityGMLI">
+		<lootcontainer id="707" count="1" size="8,8" destroy_on_close="true" sound_open="open_cardboard" sound_close="close_cardboard" loot_quality_template="alwaysMaxQualityGMLI">
 			<item group="test1Container1GroupGMLI" />
 		 </lootcontainer> 
 

@@ -88,15 +88,17 @@
 
 <!-- Downgrade Block Loot Test -->
 		<block name="cntDowngradeTestSealedGMLI"> <!--  -->
-			<property name="Extends" value="cntShippingCrateShamway"/>
-			<property name="CustomIcon" value="cntShippingCrateShamway"/>
+			<property name="Extends" value="cntShippingCrateHero"/>
+			<property name="CustomIcon" value="cntShippingCrateHero"/>
 			<property name="ItemTypeIcon" value="all_blocks"/>
 			<property name="DowngradeBlock" value="cntDowngradeTestOpenedGMLI"/>
+			<property name="CanPickup" value="true"/>
 		</block>
 
 		<block name="cntDowngradeTestOpenedGMLI">
 			<property name="Extends" value="cntGarageStorage"/>
-			<property name="CustomIcon" value="cntLootCrateShamway"/>
+			<!-- <property name="MaxDamage" value="7"/> --> <!-- To discourage using the leftover box as free storage -->
+			<property name="CustomIcon" value="cntGarageStorage"/>
 			<property name="LootList" value="707"/>
 		</block>
 <!-- End Downgrade Block Loot Test -->
