@@ -1,0 +1,62 @@
+<!-- 
+Based on post here: 
+	https://community.7daystodie.com/topic/17638-custom-loot-box/
+	UbberN00berCrates
+Posted by: ExtremeLurker
+ 
+From studying ExtremeLurker's code, I've learned:
+	A container filled with loot requires 4 things:
+	1)	A lootqualitytemplate
+		• 	This determines the QUALITY of what's in the loot.
+		•	For example, if there will be an axe in the loot, it's level will be
+			determined by the lootqualitytemplate.
+	2)	A lootgroup
+		•	This determines the items and their quantity.
+	3)	The lootcontainer
+		•	This is essentially the way the lootqualitytemplate and the lootgroup get
+			bundled together under an id so it can be called by the entity_class (which
+			is in the entityclasses.xml file)
+		•	The size property determines the inventory grid size for the container.
+			1st number is columns, 2nd number is rows. MAKE SURE THE GRID IS BIG ENOUGH
+			FOR ALL THE ITEMS YOU'VE PUT IN IT!
+		•	Lootcontainer ID MUST be an integer!!! (not sure how to make this so it doesn't potentially conflict with other container ID's)
+	4)	The entity_class (found in entityclasses.xml)
+		•	This... I'm not quite as clear as to how it works. 
+			The "Class" and "Parent" seem to be something special and are kind of like
+			blocks, but don't appear anywhere in blocks.xml.
+		•	entity_class name is how the finished thing gets spawned.
+		•	LootListAlive is the ID of the lootcontainer from loot.xml.
+
+ -->
+
+<Freakyman>
+	<append xpath="/lootcontainers">
+	<!-- PORTABLE CONTAINERS -->
+		<lootqualitytemplates> 
+			<lootqualitytemplate name="alwaysMaxQualityGMLI">
+				<qualitytemplate level="1,999999" default_quality="1"> <!-- Says that the same quality will spawn for all player levels -->
+					<loot quality="6" prob="1" /> <!-- There's a 100% chance of quality 6 stuff -->
+				</qualitytemplate>
+			</lootqualitytemplate>
+		</lootqualitytemplates>
+		
+		
+		<lootgroup name="test1Container1GroupGMLI" count="all">
+			<item name="ammo762mmBulletBall" count="150" /> <!-- Only stackable items can have a count, and it can't violate the stack size for that item -->
+			<item name="meleeToolPickaxeSteel" /> <!-- This has a max stack of 1, so count isn't needed -->
+			<item name="gunAK47" />
+			<item name="ammoBundleArrowSteelAP" count="5"/>
+		</lootgroup>
+		
+		<lootcontainer id="707" count="1" size="8,8" destroy_on_close="true" sound_open="SupplyDrops/open_supply_crate" sound_close="SupplyDrops/close_supply_crate" loot_quality_template="alwaysMaxQualityGMLI">
+			<item group="test1Container1GroupGMLI" />
+		 </lootcontainer> 
+
+		 <lootcontainer id="999" count="1" size="8,8" destroy_on_close="true" sound_open="SupplyDrops/open_supply_crate" sound_close="SupplyDrops/close_supply_crate" loot_quality_template="alwaysMaxQualityGMLI">
+			<item group="test1Container1GroupGMLI" />
+		 </lootcontainer> 
+
+
+	<!-- END PORTABLE CONTAINERS -->
+	</append>
+</Freakyman>

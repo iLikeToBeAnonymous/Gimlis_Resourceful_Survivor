@@ -110,6 +110,46 @@
 </item>
 
 
+		<!--
+		The idea here is to be able to "pack" groups of items (such as a forge, crucible, and anvil) into one block to consolidate
+		space in your inventory while traveling. Once you set up camp, you can "unpack" the crate to take out everything. 
+		
+		Ideal implementation:
+		1) Player has container of stuff.
+		2) Player is able to either pick up or break container to retrieve it
+		3) Player can place the container and have it still have the same contents from when it was picked up.
+
+		These are currently in the "items" section, but perhaps I could move the crate to the "blocks" so the crate could be placed, 
+		then have its items retrieved? 
+		Also, make a journal tip for how these should be used (like how a journal tip appears when you encounter something for the first time)
+
+		1) Figure out how player loot is determined on death. That becomes the loot list for the dropped backpack.
+		2) Make a special container that does the same thing (when it dies, it generates a loot list). 
+		   The player can place items into the container, then break it, generating the loot list. 
+		   You'll have to make it so you actually "spawn" the container when you place it, and have it spawn with the loot list it generated on death. 
+
+
+		For testing, try using the above method, but have the crate be downgradeable. It downgrades into a crate which contains everything which was originally in it?
+	  	-->
+<item name="forgeInABoxCmpltGMLI">
+	<property name="CustomIcon" value="cntShippingCrateHero"/><property name="ItemTypeIcon" value="treasure"/><property name="CustomIconTint" value="ffb0b9"/>
+	<property name="HoldType" value="45"/>
+	<property name="Meshfile" value="#Entities/LootContainers?crate_storePrefab.prefab"/>
+	<property name="DropMeshfile" value="#Entities/LootContainers?crate_storePrefab.prefab"/>
+	<property name="UnlockedBy" value="perkArtOfMiningPallets"/>
+	<property name="Material" value="Morganic"/>
+	<property name="Stacknumber" value="1"/>
+	<property name="SellableToTrader" value="false"/>
+	<property name="Group" value="Tools/Traps"/>
+	<property class="Action0">
+		<property name="Class" value="OpenBundle"/>
+		<property name="Delay" value="0"/>
+		<property name="Use_time" value="3"/>
+		<!-- <property name="Sound_start" value="read_skillbook"/> -->
+		<property name="Create_item" value="forge,toolForgeCrucible,toolAnvil"/>
+		<property name="Create_item_count" value="1,1,1"/>
+	</property>
+</item>
 
 	</append>
 </configs>	

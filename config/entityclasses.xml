@@ -12,6 +12,51 @@
     	Survivalist Library,drinkJarRedTea,foodCanChili,medicalFirstAidBandage,meleeToolTorch,keystoneBlock
     </setattribute>
 
+    <append xpath="/entity_classes">
+        <!-- PORTABLE CONTAINERS -->
+        <entity_class name="testCrate_01_GMLI">
+            <property name="Class" value="EntitySupplyCrate"/>
+            <property name="Parent" value="SupplyCrates"/>
+            <property name="Prefab" value="SupplyCrate"/>
+            <property name="Mesh" value="SupplyCrate/SupplyCrateEntityPrefab"/>
+            <property name="ModelType" value="SupplyCrate"/>
+            <property name="Faction" value="none"/>
+            <property name="MaxHealth" value="200"/>
+            <property name="Weight" value="100"/>
+            <property name="HasRagdoll" value="false"/>
+            <property name="SurfaceCategory" value="wood"/>
+            <property name="ParticleOnDeath" value="supply_crate_gib_Prefab"/>
+            <property name="LootListAlive" value="707"/> <!-- The value corresponds to the lootcontainer ID in loot.xml -->
+            <property name="IsEnemyEntity" value="false"/>
+            <property name="TimeStayAfterDeath" value="0"/>
+            <effect_group name="Base Effects">
+                <passive_effect name="HealthMax" operation="base_set" value="200"/>
+            </effect_group>
+        </entity_class>
+
+        <entity_class name="testCrate_02_GMLI"> <!-- Testing if it's possible to pull player inventory (it's not) -->
+            <property name="Class" value="EntitySupplyCrate"/>
+            <property name="Parent" value="SupplyCrates"/>
+            <property name="Prefab" value="SupplyCrate"/>
+            <property name="Mesh" value="SupplyCrate/SupplyCrateEntityPrefab"/>
+            <property name="ModelType" value="SupplyCrate"/>
+            <property name="Faction" value="none"/>
+            <property name="MaxHealth" value="200"/>
+            <property name="Weight" value="100"/>
+            <property name="HasRagdoll" value="false"/>
+            <property name="SurfaceCategory" value="wood"/>
+            <property name="ParticleOnDeath" value="supply_crate_gib_Prefab"/>
+            <property name="LootListAlive" value="2"/> <!-- The value corresponds to the lootcontainer ID in loot.xml -->
+            <property name="IsEnemyEntity" value="false"/>
+            <property name="TimeStayAfterDeath" value="0"/>
+            <effect_group name="Base Effects">
+                <passive_effect name="HealthMax" operation="base_set" value="200"/>
+            </effect_group>
+        </entity_class>
+        
+        <!-- END PORTABLE CONTAINERS -->
+    </append>
+
 </configs>
 
 
