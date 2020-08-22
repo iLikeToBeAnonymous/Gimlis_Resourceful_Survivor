@@ -65,7 +65,7 @@
 	<property name="RepairExpMultiplier" value="5.5"/>
 </item>
 
-<item name="Shaved Wood Fletchings">
+<item name="ShavedWoodFletchingsGMLI">
 	<property name="CustomIcon" value="woodFletchings"/> <!-- Make sure icon is 160 x 160 -->
 	<property name="CustomIconTint" value="e6ac37"/>
 
@@ -80,6 +80,28 @@
 	<property name="Group" value="Ammo/Weapons"/>
 	<property name="FuelValue" value="o.25"/>
 </item>
+
+
+<item name="youCantSeeMeGMLI">
+	<property name="Extends" value="armorClothGloves" param1="DescriptionKey"/>
+	<property name="CreativeMode" value="Dev"/>
+	<property name="CustomIcon" value="modGunBowPolymerString"/> <property name="CustomIconTint" value="210,0,210"/>
+	<property name="ItemTypeIcon" value="computer"/>
+	<property name="Stacknumber" value="1"/>
+	<property name="UMA.Overlay0Tint" value="255,0,255"/>
+	<property name="Tags" value="upperbody,hands,armor,armorHands,lightArmor,padded,canHaveCosmetic,admin"/>
+	<property name="ShowQuality" value="false"/>
+	<effect_group tiered="false">
+		<passive_effect name="ModSlots" operation="base_set" value="4"/>
+		<passive_effect name="ModPowerBonus" operation="base_add" value="100" tags="EconomicValue"/>
+		<passive_effect name="HypothermalResist" operation="base_add" value="1"/>
+		<passive_effect name="HyperthermalResist" operation="base_add" value="1,5"/>
+		<passive_effect name="LightMultiplier" operation="perc_add" value="-1"/>
+		<display_value name="dLightMultiplier" value="-1"/>
+		<passive_effect name="NoiseMultiplier" operation="perc_add" value="-1"/><display_value name="dNoiseMultiplier" value="-1"/>
+	</effect_group>
+</item>
+
 
 <item name="Pseudo Papyrus">
 	<property name="Extends" value="resourcePaper"/>

@@ -7,14 +7,14 @@
 		</recipe>
 
 
-		<recipe name="Shaved Wood Fletchings" count="4">
+		<recipe name="ShavedWoodFletchingsGMLI" count="4">
 			<ingredient name="resourceWood" count="1"/>
 		</recipe>
 
 		<recipe name="ammoArrowStone" count="1"> <!-- Just adds an additional recipe for an existing vanilla item -->
 			<ingredient name="resourceRockSmall" count="1"/>
 			<ingredient name="resourceWood" count="1"/>
-			<ingredient name="Shaved Wood Fletchings" count="3"/>
+			<ingredient name="ShavedWoodFletchingsGMLI" count="3"/>
 		</recipe>
 
 		<recipe name="Survivalist Arrow Rest" craft_tool="meleeToolStoneAxe" count="1">
@@ -36,7 +36,6 @@
 			<ingredient name="resourceWood" count="4"/>
 			<ingredient name="meleeToolStoneAxe" count="1"/>
 		</recipe>
-
 
 	</append>
 </configs>
