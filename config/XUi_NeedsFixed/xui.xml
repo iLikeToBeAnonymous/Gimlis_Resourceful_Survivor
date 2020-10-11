@@ -1,5 +1,6 @@
+
 <Config>
-	<append xpath="/xui/ruleset">
+	<append xpath="XUi/xui/ruleset">
 		<!-- From post by Clockwork Orange @ https://community.7daystodie.com/topic/9304-adding-custom-workstations/-->
 		<!-- "window_group name" is the name of the block in "blocks.xml with the prefix "workstation_" -->
 		<!-- The string val for "controller" is common amongst all workbenches in the vanilla xui.xml -->

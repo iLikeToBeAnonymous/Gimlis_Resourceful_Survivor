@@ -4,7 +4,7 @@
 <!-- ############################################## -->
 <!-- ############################################## -->
 
-        <item_modifier id="survivalistLappedFlint" name="Survivalist's Flint Blade" installable_tags="axe,thrownWeapon" modifier_tags="damage" type="attachment">
+        <item_modifier id="survivalistLappedFlint" name="survivalistFlintBladeGMLI" installable_tags="axe,thrownWeapon" modifier_tags="damage" type="attachment">
             <property name="CustomIcon" value="modMeleeDiamondTip"/>
             <property name="CustomIconTint" value="ffb0b9"/>
             <property name="Stacknumber" value="1"/> <property name="Group" value="Ammo/Weapons,Basics,Mods"/>
@@ -19,6 +19,7 @@
                 <passive_effect name="EntityDamage" operation="perc_add" value="3.1"/> 
                 <passive_effect name="BlockDamage" operation="perc_add" value=".1"/>
                 <passive_effect name="DegradationMax" operation="perc_add" value=".5"/>
+                <passive_effect name="HarvestCount" operation="base_add" value="0.75" tags="allHarvest"/>
             </effect_group>
 
             <effect_group tiered="false">
@@ -38,7 +39,7 @@
 
 <!-- ################################################################################################ -->
 
-        <item_modifier name="Survivalist Arrow Rest" installable_tags="bow" modifier_tags="accuracy" type="attachment">
+        <item_modifier name="survivalistArrowRestGMLI" installable_tags="bow" modifier_tags="accuracy" type="attachment">
             <property name="Stacknumber" value="1"/> <property name="Group" value="Ammo/Weapons,Basics,Mods"/>
 
             <property name="CustomIcon" value="modMeleeFortifyingGrip"/> <property name="CustomIconTint" value="ffb0b9"/>            

@@ -81,6 +81,53 @@
 	<property name="FuelValue" value="o.25"/>
 </item>
 
+<item name="sewingNeedleBundleGMLI">
+	<property name="CustomIcon" value="sewingNeedleBundle"/> <!-- Make sure icon is 160 x 160 -->
+
+	<property name="HoldType" value="45"/>
+	<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
+	<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+	
+	<property name="Group" value="Resources,Medical"/>
+	
+	<property name="Material" value="Miron_scrap"/>
+	
+	<property name="Stacknumber" value="5"/>
+	<property name="Weight" value="0"/>
+	<property name="EconomicValue" value="5"/>
+	<property name="EconomicBundleSize" value="1"/>
+	<property name="Stacknumber" value="5"/> <!-- STK ammobundle -->
+	<property class="Action0">
+		<property name="Class" value="OpenBundle"/>
+		<property name="Delay" value="0"/>
+		<property name="Use_time" value="0"/>
+		<property name="Sound_start" value="close_garbage"/>
+		<property name="Create_item" value="sewingNeedleSingleGMLI"/>
+		<property name="Create_item_count" value="5"/>
+		<!--
+		This can spawn multiple item types and quantities. No randomness.
+		<property name="Create_item" value="ammo9mmBulletBall,drinkCanRiverWater"/>
+		<property name="Create_item_count" value="50,5"/>
+		-->
+	</property>
+</item>
+
+<item name="sewingNeedleSingleGMLI">
+	<property name="CustomIcon" value="sewingNeedleSingle"/> <!-- Make sure icon is 160 x 160 -->
+
+	<property name="HoldType" value="45"/>
+	<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
+	<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+	
+	<property name="Group" value="Resources,Medical"/>
+	
+	<property name="Material" value="Miron_scrap"/>
+	
+	<property name="Stacknumber" value="20"/>
+	<property name="Weight" value="0"/>
+	<property name="EconomicValue" value="1"/>
+	<property name="EconomicBundleSize" value="1"/>
+</item>
 
 <item name="youCantSeeMeGMLI">
 	<property name="Extends" value="armorClothGloves" param1="DescriptionKey"/>
@@ -129,6 +176,32 @@
 		<property name="Create_item" value="bookNeedleAndThreadWinterWear,bookNeedleAndThreadLegwear,bookNeedleAndThreadFootwear,bookNeedleAndThreadDesertWear,bookNeedleAndThreadDusters,bookNeedleAndThreadPufferCoats,bookNeedleAndThreadPockets,toolBellowsSchematic,toolForgeCrucibleSchematic,toolAnvilSchematic,workbenchSchematic,forgeSchematic,chemistryStationSchematic,meleeToolWrenchSchematic,modArmorTripleStoragePocketSchematic"/>
 		<property name="Create_item_count" value="1,1,1,1,1,1,1,1,1,1,1,1,1,1,1"/>
 	</property>
+</item>
+
+<item name="drugAntibioticSlurryGMLI">
+	<property name="Tags" value="medical"/>
+	<property name="HoldType" value="16"/>
+	<property name="Meshfile" value="#Other/Items?Food/bottled_waterPrefab.prefab"/>
+	<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+	<property name="CustomIcon" value="drinkJarBeer"/>
+	<property name="Material" value="Morganic"/>
+	<property name="EconomicValue" value="100"/>
+	<property name="Stacknumber" value="30"/> <!-- STK drink -->
+	<property name="DisplayType" value="cureInfection"/> <!-- Make your own to more accurately reflect what this does. -->
+	<property name="Group" value="Science,CFChemicals,Medical"/>
+	<property class="Action0">
+		<property name="Class" value="Eat"/>
+		<property name="Delay" value="1.0"/>
+		<property name="Use_time" value="..."/>
+		<property name="Sound_start" value="player_drinking"/>
+		<property name="Create_item" value="drinkJarEmpty"/>
+	</property>
+	<effect_group tiered="false">
+		<display_value name="dCureInfection" value=".25"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$buffInfectionAddCurePerc" operation="add" value="25"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffInfectionAddCure"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="17"/>
+	</effect_group>
 </item>
 
 

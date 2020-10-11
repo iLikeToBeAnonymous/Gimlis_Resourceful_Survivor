@@ -6,3 +6,12 @@ keystoneBlockPortableGMLIDesc,blocks,Terrain,"1/8-size, portable land claim bloc
 workstationNomadsGMLI,blocks,Terrain,"[FF8C00]Nomad's Workstation[-]"
 
 workstationNomadsGMLIDesc,blocks,Terrain,"Workbenches are a luxury. For a more resourceful survivor, crafting needs to be done on-the-go.\n\nCan either be picked up gracefully, or beaten into submission."
+
+survivalistFlintBladeGMLI,items,crafting items,"[FF8C00]Survivalist's Flint Blade[-]"
+
+survivalistArrowRestGMLI,items,crafting items,"[FF8C00]Survivalist Arrow Rest[-]"
+
+
+drugAntibioticSlurryGMLI,items,crafting items, "[FF8C00]Antibiotic Slurry[-]"
+
+drugAntibioticSlurryGMLIDesc,items,Medical,"A simple but effective beverage that can cure infections. Doesn't taste very good.\n\nCan be crafted at a campfire with no special equipment."

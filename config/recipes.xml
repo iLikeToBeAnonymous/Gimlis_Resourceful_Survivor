@@ -1,7 +1,7 @@
 <configs>
 	<append xpath="/recipes">
 
-		<recipe name="Survivalist's Flint Blade" count="1" tags="perkJavelinMaster">
+		<recipe name="survivalistFlintBladeGMLI" count="1" tags="perkJavelinMaster"> <!-- changed from "Survivalist's Flint Blade" for alpha 19 -->
 			<ingredient name="resourceRockSmall" count="5"/>
 			<ingredient name="resourceYuccaFibers" count="5"/>
 		</recipe>
@@ -17,16 +17,55 @@
 			<ingredient name="ShavedWoodFletchingsGMLI" count="3"/>
 		</recipe>
 
-		<recipe name="Survivalist Arrow Rest" craft_tool="meleeToolStoneAxe" count="1">
+		<recipe name="survivalistArrowRestGMLI" craft_tool="meleeToolRepairT0StoneAxe" count="1"> <!-- changed from "Survivalist Arrow Rest" for alpha 19 -->
 			<ingredient name="resourceWood" count="5"/>
 		</recipe>
+
+		<!-- It would also be nice to have a non-forge bone-needle bundle for crafting without a forge -->
+		<recipe name="sewingNeedleBundleGMLI" count="1" material_based="true" craft_time="20" craft_area="forge" always_unlocked="true">
+			<ingredient name="unit_iron" count="5"/>
+		</recipe>
+
+		<recipe name="resourceSewingKit" count="1">
+			<ingredient name="sewingNeedleSingleGMLI" count="1"/>
+			<ingredient name="resourceCropCottonPlant" count="4"/>
+		</recipe>
+<!-- ####################################### -->
+<!-- Some recipes to just make things easier -->
+<!-- ####################################### -->
+
+		<recipe name="resourceCrushedSand" count="1">
+			<ingredient name="resourceRockSmall" count="2"/>
+		</recipe>
+
+		<recipe name="foodCornMeal" count="2">
+			<ingredient name="foodCropGraceCorn" count="1"/>
+		</recipe>
+
+		<recipe name="drugAntibioticSlurryGMLI" count="1" craft_area="campfire">
+			<ingredient name="foodCropBlueberries" count="3"/>
+			<ingredient name="foodCropMushrooms" count="1"/>
+			<ingredient name="resourceCropChrysanthemumPlant" count="2"/>
+			<ingredient name="resourceCropGoldenrodPlant" count="1"/>
+			<ingredient name="drinkJarBoiledWater" count="1"/>
+		</recipe>
+
+		<recipe name="drugAntibioticSlurryGMLI" count="1" craft_area="chemistryStation" tags="chemStationCrafting">
+			<ingredient name="foodCropBlueberries" count="3"/>
+			<ingredient name="foodCropMushrooms" count="1"/>
+			<ingredient name="resourceCropChrysanthemumPlant" count="2"/>
+			<ingredient name="resourceCropGoldenrodPlant" count="1"/>
+			<ingredient name="drinkJarBoiledWater" count="1"/>
+		</recipe>
+
 
 <!-- #######################################-->
 <!-- ########### Workbench Stuff ###########-->
 <!-- #######################################-->
+<!-- Disabled until I figure out how to fix this for alpha 19 -->
 
 		<!-- Portable Land Claim Block so player can pick up things like campfires and forges while hiding at night during travel -->
-		<recipe name="keystoneBlockPortableGMLI" count="1" material_based="true" craft_time="10" always_unlocked="true">
+		<!-- <recipe name="keystoneBlockPortableGMLI" count="1" material_based="true" craft_time="10" always_unlocked="true">
 			<ingredient name="resourceRockSmall" count="1"/>
 			<ingredient name="resourceClayLump" count="1"/>
 		</recipe>
@@ -34,8 +73,8 @@
 		<recipe name="workstationNomadsGMLI" count="1" material_based="true" craft_time="10" always_unlocked="true">
 			<ingredient name="resourceRockSmall" count="1"/>
 			<ingredient name="resourceWood" count="4"/>
-			<ingredient name="meleeToolStoneAxe" count="1"/>
-		</recipe>
+			<ingredient name="meleeToolRepairT0StoneAxe" count="1"/> --> <!-- changed from "meleeToolStoneAxe" before alpha 19 -->
+		<!-- </recipe> -->
 
 	</append>
 </configs>

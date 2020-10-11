@@ -1,5 +1,5 @@
 <Config>
-	<append xpath="/windows">
+	<append xpath="XUi/windows">
 	<!-- From post by Clockwork Orange @ https://community.7daystodie.com/topic/9304-adding-custom-workstations/-->
 		<window name="windowToolsWorkstationNomadsGMLI" width="228" height="121" panel="Right" cursor_area="true" > <!-- This color code works in A18.4, but it's shorter to do the new way -->
 			<panel style="header.panel">			
