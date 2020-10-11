@@ -204,6 +204,34 @@
 	</effect_group>
 </item>
 
+<item name="foodRoastedCornGMLI">
+	<property name="Extends" value="foodCornOnTheCob"/>
+	<property name="EconomicValue" value="30"/>
+
+	<property name="CustomIcon" value="foodCornOnTheCob"/>
+
+	<effect_group tiered="false" name="Food Tier 0">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="3"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="6"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="2"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+	</effect_group>
+</item>
+
+<item name="foodRoastedRedCornGMLI">
+	<property name="Extends" value="foodCornOnTheCob"/>
+	<property name="EconomicValue" value="40"/>
+
+	<property name="CustomIcon" value="foodCornOnTheCob"/> <!-- Make sure icon is 160 x 160 -->
+	<property name="CustomIconTint" value="ff9f9f"/>
+
+	<effect_group tiered="false" name="Food Tier 0">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="3"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="10"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="10"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+	</effect_group>
+</item>
 
 		<!--
 		The idea here is to be able to "pack" groups of items (such as a forge, crucible, and anvil) into one block to consolidate

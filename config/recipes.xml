@@ -59,6 +59,14 @@
 		</recipe>
 
 
+		<recipe name="foodRoastedCornGMLI" count="1" craft_time="20" craft_area="campfire" tags="perkMasterChef">
+			<ingredient name="foodCropCorn" count="1"/>
+		</recipe>
+
+		<recipe name="foodRoastedRedCornGMLI" count="1" craft_time="20" craft_area="campfire" tags="perkMasterChef">
+			<ingredient name="foodCropGraceCorn" count="1"/>
+		</recipe>
+
 <!-- #######################################-->
 <!-- ########### Workbench Stuff ###########-->
 <!-- #######################################-->
