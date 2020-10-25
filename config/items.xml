@@ -132,12 +132,19 @@
 <item name="youCantSeeMeGMLI">
 	<property name="Extends" value="armorClothGloves" param1="DescriptionKey"/>
 	<property name="CreativeMode" value="Dev"/>
-	<property name="CustomIcon" value="modGunBowPolymerString"/> <property name="CustomIconTint" value="210,0,210"/>
+	<property name="CustomIcon" value="armorMilitaryGloves"/> <property name="CustomIconTint" value="210,0,210"/>
+	<property name="EquipSlot" value="Hands"/>
 	<property name="ItemTypeIcon" value="computer"/>
 	<property name="Stacknumber" value="1"/>
-	<property name="UMA.Overlay0Tint" value="255,0,255"/>
+	<property name="UMA.Overlay0Tint" value="105,110,83"/>
 	<property name="Tags" value="upperbody,hands,armor,armorHands,lightArmor,padded,canHaveCosmetic,admin"/>
 	<property name="ShowQuality" value="false"/>
+	<property class="UMA">
+		<property name="Mesh" value="armor_kevlar_gloves"/>
+		<property name="Overlay0" value="armor_kevlar_gloves"/>
+		<property name="Layer" value="0"/>
+		<property name="UISlot" value="Gloves"/>
+	</property>
 	<effect_group tiered="false">
 		<passive_effect name="ModSlots" operation="base_set" value="4"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="100" tags="EconomicValue"/>
