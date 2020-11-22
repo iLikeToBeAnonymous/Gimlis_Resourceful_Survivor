@@ -1,7 +1,7 @@
 <configs>
 	<append xpath="/items">
 	
-<item name="meleeToolSurvivalistFlintAxe"> 
+<item name="meleeToolSurvivalistFlintAxe"> <!-- Not Implemented, but available via creative menu -->
 	<property name="Tags" value="axe,melee,light,tool,attStrength,perkMiner69r,perkMotherLode,perkTheHuntsman,canHaveCosmetic"/>
 	<property name="DisplayType" value="meleeRepairTool"/>
 	<property name="HoldType" value="32"/>
@@ -110,6 +110,117 @@
 		<property name="Create_item_count" value="50,5"/>
 		-->
 	</property>
+</item>
+
+<item name="flintArrowHeadBundleGMLI">
+	<property name="CustomIcon" value="flintArrowHeadBundle"/> <!-- Make sure icon is 160 x 160 -->
+
+	<property name="HoldType" value="45"/>
+	<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
+	<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+	
+	<property name="Group" value="Ammo/Weapons"/>
+	
+	<property name="Material" value="Mglass"/>
+	
+	<property name="Stacknumber" value="150"/>
+	<property name="Weight" value="0"/>
+	<property name="EconomicValue" value="15"/>
+	<property name="EconomicBundleSize" value="1"/>
+	<property name="Stacknumber" value="3"/> <!-- STK ammobundle -->
+	<property class="Action0">
+		<property name="Class" value="OpenBundle"/>
+		<property name="Delay" value="0"/>
+		<property name="Use_time" value="0"/>
+		<property name="Sound_start" value="close_garbage"/>
+		<property name="Create_item" value="flintArrowHeadGMLI"/>
+		<property name="Create_item_count" value="3"/>
+		<!--
+		This can spawn multiple item types and quantities. No randomness.
+		<property name="Create_item" value="ammo9mmBulletBall,drinkCanRiverWater"/>
+		<property name="Create_item_count" value="50,5"/>
+		-->
+	</property>
+</item>
+
+<item name="flintArrowHeadGMLI">
+	<property name="CustomIcon" value="flintArrowHead"/> <!-- Make sure icon is 160 x 160 -->
+	<property name="HoldType" value="45"/>
+	<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
+	<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+	<property name="Material" value="Mglass"/>
+	<property name="Stacknumber" value="500"/> <!-- STK resource -->
+	<property name="EconomicValue" value="5"/>
+	<property name="EconomicBundleSize" value="5"/>
+	<property name="Group" value="Ammo/Weapons"/>
+</item>
+
+<item name="arrowShaftBundleGMLI">
+	<property name="CustomIcon" value="arrowShaftBundle"/> <!-- Make sure icon is 160 x 160 -->
+
+	<property name="HoldType" value="45"/>
+	<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
+	<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+	
+	<property name="Group" value="Ammo/Weapons"/>
+	
+	<property name="Material" value="Mwood"/>
+	
+	<property name="Stacknumber" value="150"/>
+	<property name="Weight" value="0"/>
+	<property name="EconomicValue" value="15"/>
+	<property name="EconomicBundleSize" value="1"/>
+	<property name="Stacknumber" value="3"/> <!-- STK ammobundle -->
+	<property class="Action0">
+		<property name="Class" value="OpenBundle"/>
+		<property name="Delay" value="0"/>
+		<property name="Use_time" value="0"/>
+		<property name="Sound_start" value="close_garbage"/>
+		<property name="Create_item" value="arrowShaftGMLI"/>
+		<property name="Create_item_count" value="6"/>
+		<!--
+		This can spawn multiple item types and quantities. No randomness.
+		<property name="Create_item" value="ammo9mmBulletBall,drinkCanRiverWater"/>
+		<property name="Create_item_count" value="50,5"/>
+		-->
+	</property>
+</item>
+
+<item name="arrowShaftGMLI">
+	<property name="CustomIcon" value="arrowShaft"/> <!-- Make sure icon is 160 x 160 -->
+
+	<property name="HoldType" value="45"/>
+	<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
+	<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+	
+	<property name="Group" value="Ammo/Weapons"/>
+	
+	<property name="Material" value="Mwood"/>
+	
+	<property name="Stacknumber" value="500"/>
+	<property name="Weight" value="0"/>
+	<property name="EconomicValue" value="15"/>
+	<property name="EconomicBundleSize" value="1"/>
+</item>
+
+<item name="ammoArrowFlintGMLI">
+	<property name="CustomIcon" value="ammoArrowStone"/><property name="CustomIconTint" value="ff9f9f"/>
+	<property name="Extends" value="ammoArrowIron"/>
+	<property name="Meshfile" value="#Other/Items?Weapons/Ranged/Bows/WoodenBow/arrowPrefab.prefab"/>
+	<property name="StickyMeshFile" value="#Other/Items?Weapons/Ranged/Bows/WoodenBow/bodkinArrowPrefab.prefab"/>
+	<property name="EconomicValue" value="57"/>
+	<property name="EconomicBundleSize" value="5"/>
+	<property name="StickyOffset" value=".5"/>
+	
+	<effect_group name="ammoArrowFlintGMLI" tiered="false"> <!-- ammoArrowSteelAP -->
+		<passive_effect name="EntityDamage" operation="base_set" value="33"/>
+		<passive_effect name="BlockDamage" operation="base_set" value="5"/>
+		<passive_effect name="TargetArmor" operation="perc_add" value="-.2"/>
+		<display_value name="dTargetArmor" value="-.2"/>
+		<passive_effect name="DamageModifier" operation="perc_set" value=".1" tags="wood"/>
+		<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth,metal,cloth"/>
+		<passive_effect name="ProjectileVelocity" operation="base_set" value="55"/>
+	</effect_group>
 </item>
 
 <item name="sewingNeedleSingleGMLI">
@@ -261,6 +372,106 @@
 
 		For testing, try using the above method, but have the crate be downgradeable. It downgrades into a crate which contains everything which was originally in it?
 	  	-->
+<item name="gunRifleBowGMLI">
+	<property name="CustomIcon" value="gunRifleT3SniperRifle"/>
+	<property name="Tags" value="weapon,ranged,holdBreathAiming,reloadPenalty,gun,bowDrawPenalty,archery,bow,perkArchery,barrelAttachments,sideAttachments,smallTopAttachments,mediumTopAttachments,largeTopAttachments,stock,magazine,firingMode,bottomAttachments,attPerception,perkDeadEye,attachmentsIncluded,canHaveCosmetic"/>
+	<property name="DisplayType" value="rangedGun"/>
+	<property name="HoldType" value="77"/>
+	<property name="Meshfile" value="#Other/Items?Weapons/Ranged/Sharp Shooter/sharpShooterGunPrefab.prefab"/>
+	<property name="Material" value="MRifleParts"/> <property name="Weight" value="6"/>
+	<property name="RepairTools" value="resourceRepairKit"/>
+	<property name="DegradationBreaksAfter" value="false"/>
+	<property name="SoundJammed" value="weapon_jam"/>
+	<property name="Attachments" value="meleeToolFlashlight02"/>
+	<property name="CrosshairOnAim" value="true"/> <!-- aimTest -->
+	<property name="CrosshairUpAfterShot" value="true"/> <!-- aimTest -->
+	<property name="Sound_Sight_In" value="rifle_sight_in"/>
+	<property name="Sound_Sight_Out" value="rifle_sight_out"/>
+	<property name="LightSource" value="lightSource"/> <!-- Start: Needed for the attachment flashlight -->
+	<property name="ActivateObject" value="Attachments/flashlight/lightSource"/>
+	<property name="AttachmentFlashlight" value="meleeToolFlashlight02"/> <!-- End: Needed for the attachment flashlight -->
+	<property name="Group" value="Ammo/Weapons"/>
+	<property name="RepairExpMultiplier" value="10.8"/>
+	<property name="LightValue" value=".45"/>
+	<property name="EconomicValue" value="1500"/>
+	
+	<property name="ShowQuality" value="true"/>
+
+	<property class="Action0">
+		<property name="Class" value="Ranged"/>
+		<property name="Delay" value=".5"/> <!-- obsolete if rounds per minute exists -->
+		<property name="Magazine_items" value="ammoArrowFlintGMLI,ammoArrowStone,ammoArrowIron,ammoArrowSteelAP,ammoArrowFlaming,ammoArrowExploding"/>
+		<property name="Hitmask_override" value="Arrow"/>
+		<property name="Reload_time" value="0.5"/>
+		<property name="Sound_start" value="bow_fire"/>
+		<property name="Sound_loop" value="bow2_fire"/>
+		<property name="Sound_repeat" value=""/>
+		<property name="Sound_end" value=""/>
+		<property name="Sound_empty" value="dryfire"/>
+		<property name="Particles_muzzle_fire" value="nozzleflashuzi"/>
+		<property name="Particles_muzzle_fire_fpv" value="gunfire_sniper_fpv"/>
+		<requirement name="CVarCompare" cvar="_underwater" operation="LT" value=".98"/>
+	</property>
+
+	<property class="Action1">
+		<property name="Class" value="Zoom"/>
+		<property name="Zoom_max_out" value="55"/>
+		<property name="Zoom_max_in" value="55"/>
+		<property name="ScopeCameraOffset" value="0,.0262,-.05"/>
+	</property>
+
+	<effect_group name="gunRifleBowGMLI">
+		<passive_effect name="MaxRange" operation="base_set" value="200" tags="perkDeadEye"/>
+		<passive_effect name="DamageFalloffRange" operation="base_set" value="200" tags="perkDeadEye"/>
+		<passive_effect name="DamageFalloffRange" operation="perc_add" value="-.2,.2" tags="perkDeadEye"/> <!-- random effective rng -->
+		<passive_effect name="EntityDamage" operation="base_add" value="14" tags="perkDeadEye"/>
+
+
+		<!-- <passive_effect name="RoundsPerMinute" operation="base_set" value="140" tags="perkDeadEye"/>
+		<passive_effect name="BurstRoundCount" operation="base_set" value="1" tags="perkDeadEye"/> -->
+		<passive_effect name="RoundsPerMinute" operation="base_set" value="450"/>
+		<passive_effect name="BurstRoundCount" operation="base_set" value="1"/>
+
+		<passive_effect name="MagazineSize" operation="base_set" value="50" tags="perkDeadEye"/>
+		<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="1" tags="perkDeadEye"/> <!-- 2.7s -->
+		<passive_effect name="ModSlots" operation="base_set" value="7,7,7,7,7,7" tier="1,2,3,4,5,6"/>
+		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+		<passive_effect name="EntityDamage" operation="perc_add" value="-.15,.15" tags="perkDeadEye"/> <!-- random EntityDmg -->
+		<passive_effect name="EntityDamage" operation="perc_add" value=".1,5" tier="2,6" tags="perkDeadEye"/> <!-- tier bonus -->
+		<passive_effect name="BlockDamage" operation="perc_add" value="-.15,.15" tags="perkDeadEye"/> <!-- random BlockDmg -->
+		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkDeadEye"/> <!-- tier bonus -->
+
+		<passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tags="perkDeadEye"/> <!-- random DegMax -->
+		<passive_effect name="RoundsPerMinute" operation="perc_add" value="-.05,.05" tags="perkDeadEye"/> <!-- random APM -->
+		<passive_effect name="MagazineSize" operation="base_add" value="-.5,1.6"/> <!-- random MagazineSize -->
+		<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08" tags="perkDeadEye"/> <!-- random WeaponHandling -->
+
+		<passive_effect name="SpreadDegreesVertical" operation="base_set" value="1" tags="perkDeadEye"/>
+		<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="1" tags="perkDeadEye"/>
+		<passive_effect name="SpreadMultiplierAiming" operation="base_set" value=".06" tags="perkDeadEye"/>
+		<passive_effect name="SpreadMultiplierCrouching" operation="base_set" value=".8" tags="perkDeadEye"/>
+		<passive_effect name="SpreadMultiplierWalking" operation="base_set" value="1" tags="perkDeadEye"/>
+		<passive_effect name="SpreadMultiplierRunning" operation="base_set" value="1" tags="perkDeadEye"/>
+
+		<!-- <passive_effect name="KickDegreesVerticalMin" operation="base_set" value="0.1" tags="perkDeadEye"/>
+		<passive_effect name="KickDegreesVerticalMax" operation="base_set" value="0.1" tags="perkDeadEye"/>
+		<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-.2" tags="perkDeadEye"/>
+		<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value=".1" tags="perkDeadEye"/> -->
+
+		<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="0.1" tags="perkDeadEye"/>
+		<passive_effect name="WeaponHandling" operation="base_set" value="1" tags="perkDeadEye"/>
+
+		<passive_effect name="DegradationMax" operation="base_set" value="250,500" tier="1,6" tags="perkDeadEye"/>
+		<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="perkDeadEye"/>
+
+		<!--
+		<passive_effect name="SpreadMultiplierWalking" operation="base_set" value="1.5"/>
+		-->
+	</effect_group>
+</item>
+
+
 <item name="forgeInABoxCmpltGMLI">
 	<property name="CustomIcon" value="cntShippingCrateHero"/><property name="ItemTypeIcon" value="treasure"/><property name="CustomIconTint" value="ffb0b9"/>
 	<property name="HoldType" value="45"/>
@@ -283,3 +494,4 @@
 
 	</append>
 </configs>	
+
