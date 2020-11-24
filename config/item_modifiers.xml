@@ -4,7 +4,7 @@
 <!-- ############################################## -->
 <!-- ############################################## -->
 
-        <item_modifier id="survivalistLappedFlint" name="survivalistFlintBladeGMLI" installable_tags="axe,thrownWeapon" modifier_tags="damage" type="attachment">
+        <item_modifier id="survivalistLappedFlint" name="survivalistFlintBladeGMLI" installable_tags="axe,thrownWeapon,shovel" modifier_tags="damage" type="attachment">
             <property name="CustomIcon" value="modMeleeDiamondTip"/>
             <property name="CustomIconTint" value="ffb0b9"/>
             <property name="Stacknumber" value="1"/> <property name="Group" value="Ammo/Weapons,Basics,Mods"/>

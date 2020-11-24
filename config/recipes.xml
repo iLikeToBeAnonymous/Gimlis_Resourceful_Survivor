@@ -6,21 +6,59 @@
 			<ingredient name="resourceYuccaFibers" count="5"/>
 		</recipe>
 
+<!-- ####################################### -->
+<!--          Item Modifier Recipes          -->
+<!-- ####################################### -->
+		<recipe name="survivalistArrowRestGMLI" craft_tool="meleeToolRepairT0StoneAxe" count="1"> <!-- changed from "Survivalist Arrow Rest" for alpha 19 -->
+			<ingredient name="resourceWood" count="5"/>
+		</recipe>
+
+<!-- ############################################ -->
+<!-- Arrow Components for Faster/Cheaper Crafting   -->
+<!-- ############################################ -->
+		<recipe name="flintArrowHeadBundleGMLI">
+			<ingredient name="resourceRockSmall" count="1"/>
+		</recipe>
+
+		<recipe name="arrowShaftBundleGMLI">
+			<ingredient name="resourceWood" count="1"/>
+		</recipe>
 
 		<recipe name="ShavedWoodFletchingsGMLI" count="4">
 			<ingredient name="resourceWood" count="1"/>
 		</recipe>
 
-		<recipe name="ammoArrowStone" count="1"> <!-- Just adds an additional recipe for an existing vanilla item -->
+<!-- ####################################### -->
+<!--    Ammo (Arrows, Crossbow Bolts, etc)   -->
+<!-- ####################################### -->
+		<recipe name="ammoArrowStone" count="1" craft_time="3"> <!-- Just adds an additional recipe for an existing vanilla item -->
 			<ingredient name="resourceRockSmall" count="1"/>
 			<ingredient name="resourceWood" count="1"/>
 			<ingredient name="ShavedWoodFletchingsGMLI" count="3"/>
 		</recipe>
 
-		<recipe name="survivalistArrowRestGMLI" craft_tool="meleeToolRepairT0StoneAxe" count="1"> <!-- changed from "Survivalist Arrow Rest" for alpha 19 -->
-			<ingredient name="resourceWood" count="5"/>
+		<recipe name="ammoArrowStone" count="1"  craft_time="0.25">
+			<ingredient name="flintArrowHeadGMLI" count="1"/>
+			<ingredient name="arrowShaftGMLI" count="1"/>
+			<ingredient name="ShavedWoodFletchingsGMLI" count="3"/>
 		</recipe>
 
+		<recipe name="ammoCrossbowBoltStone" count="1"  craft_time="0.25">
+			<ingredient name="flintArrowHeadGMLI" count="1"/>
+			<ingredient name="arrowShaftGMLI" count="1"/>
+			<ingredient name="ShavedWoodFletchingsGMLI" count="3"/>
+		</recipe>
+
+
+		<recipe name="gunRifleBowGMLI"> <!-- Cheaty Bow-zilla -->
+			<ingredient name="resourceWood" count="5"/>
+			<ingredient name="resourceYuccaFibers" count="5"/>
+		</recipe>
+
+
+<!-- ####################################### -->
+<!-- Some recipes to just make things easier -->
+<!-- ####################################### -->
 		<!-- It would also be nice to have a non-forge bone-needle bundle for crafting without a forge -->
 		<recipe name="sewingNeedleBundleGMLI" count="1" material_based="true" craft_time="20" craft_area="forge" always_unlocked="true">
 			<ingredient name="unit_iron" count="5"/>
@@ -30,9 +68,6 @@
 			<ingredient name="sewingNeedleSingleGMLI" count="1"/>
 			<ingredient name="resourceCropCottonPlant" count="4"/>
 		</recipe>
-<!-- ####################################### -->
-<!-- Some recipes to just make things easier -->
-<!-- ####################################### -->
 
 		<recipe name="resourceCrushedSand" count="1">
 			<ingredient name="resourceRockSmall" count="2"/>

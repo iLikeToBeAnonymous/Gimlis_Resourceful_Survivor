@@ -127,7 +127,7 @@
 	<property name="Weight" value="0"/>
 	<property name="EconomicValue" value="15"/>
 	<property name="EconomicBundleSize" value="1"/>
-	<property name="Stacknumber" value="3"/> <!-- STK ammobundle -->
+	<property name="Stacknumber" value="100"/> <!-- STK ammobundle -->
 	<property class="Action0">
 		<property name="Class" value="OpenBundle"/>
 		<property name="Delay" value="0"/>
@@ -145,14 +145,40 @@
 
 <item name="flintArrowHeadGMLI">
 	<property name="CustomIcon" value="flintArrowHead"/> <!-- Make sure icon is 160 x 160 -->
+	<property name="Tags" value="ammo,ranged,attAgility,perkArchery,perkPenetrator"/>
+	<property name="DisplayType" value="ammoArrow"/>
+	<property name="Meshfile" value="#Other/Items?Weapons/Ranged/Bows/WoodenBow/arrowPrefab.prefab"/>
 	<property name="HoldType" value="45"/>
-	<property name="Meshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
+	<property name="HandMeshfile" value="#Other/Items?Misc/sackPrefab.prefab"/>
 	<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
-	<property name="Material" value="Mglass"/>
-	<property name="Stacknumber" value="500"/> <!-- STK resource -->
-	<property name="EconomicValue" value="5"/>
+	<property name="Material" value="Mmetal"/>
+	<property name="IsSticky" value="true"/>
+	<property name="StickyOffset" value=".1"/>
+	<property name="StickyColliderUp" value="2"/>
+	<property name="StickyColliderRadius" value=".05"/>
+	<property name="StickyColliderLength" value=".75"/>
+	<property name="Stacknumber" value="150"/> <!-- STK ammo low -->
+	<property name="FuelValue" value="25"/>
+	<property name="EconomicValue" value="25"/>
 	<property name="EconomicBundleSize" value="5"/>
 	<property name="Group" value="Ammo/Weapons"/>
+	<property class="Action1">
+		<property name="Class" value="Projectile"/>
+		<property name="Explosion.ParticleIndex" value="0"/> <!-- no expl. -->
+		<property name="Gravity" value="-2.5"/>
+		<property name="FlyTime" value="0"/>
+		<property name="LifeTime" value="14"/>
+	</property>
+	<property class="Attributes">
+		<property name="GetQualityFromWeapon" value="true"/>
+	</property>
+	<effect_group name="flintArrowHeadGMLI" tiered="false"> <!-- ammoCrossbowBoltIron -->
+		<passive_effect name="EntityDamage" operation="base_set" value="38"/>
+		<passive_effect name="BlockDamage" operation="base_set" value="6"/>
+		<passive_effect name="DamageModifier" operation="perc_set" value=".1" tags="wood"/>
+		<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth,metal,cloth"/>
+		<passive_effect name="ProjectileVelocity" operation="base_set" value="75"/>
+	</effect_group>
 </item>
 
 <item name="arrowShaftBundleGMLI">
@@ -166,11 +192,10 @@
 	
 	<property name="Material" value="Mwood"/>
 	
-	<property name="Stacknumber" value="150"/>
 	<property name="Weight" value="0"/>
 	<property name="EconomicValue" value="15"/>
 	<property name="EconomicBundleSize" value="1"/>
-	<property name="Stacknumber" value="3"/> <!-- STK ammobundle -->
+	<property name="Stacknumber" value="100"/> <!-- STK ammobundle -->
 	<property class="Action0">
 		<property name="Class" value="OpenBundle"/>
 		<property name="Delay" value="0"/>
@@ -206,7 +231,7 @@
 <item name="ammoArrowFlintGMLI">
 	<property name="CustomIcon" value="ammoArrowStone"/><property name="CustomIconTint" value="ff9f9f"/>
 	<property name="Extends" value="ammoArrowIron"/>
-	<property name="Meshfile" value="#Other/Items?Weapons/Ranged/Bows/WoodenBow/arrowPrefab.prefab"/>
+	<property name="Meshfile" value="#Other/Items?Tools/nailProjectilePrefab.prefab"/>
 	<property name="StickyMeshFile" value="#Other/Items?Weapons/Ranged/Bows/WoodenBow/bodkinArrowPrefab.prefab"/>
 	<property name="EconomicValue" value="57"/>
 	<property name="EconomicBundleSize" value="5"/>
@@ -375,7 +400,7 @@
 <item name="gunRifleBowGMLI">
 	<property name="CustomIcon" value="gunRifleT3SniperRifle"/>
 	<!-- The tag "holdBreathAiming" causes player to lose stamina while aiming. -->
-	<property name="Tags" value="weapon,reloadPenalty,gun,ranged,bowDrawPenalty,archery,bow,perkArchery,barrelAttachments,sideAttachments,smallTopAttachments,mediumTopAttachments,largeTopAttachments,stock,magazine,firingMode,bottomAttachments,attPerception,perkDeadEye,attachmentsIncluded,canHaveCosmetic"/> 
+	<property name="Tags" value="weapon,gun,ranged,bowDrawPenalty,archery,bow,perkArchery,barrelAttachments,sideAttachments,smallTopAttachments,mediumTopAttachments,largeTopAttachments,stock,magazine,firingMode,bottomAttachments,attPerception,perkDeadEye,attachmentsIncluded,canHaveCosmetic"/> 
 
 	<!-- How it's held and displayed -->
 	<property name="DisplayType" value="rangedLauncher"/><!--<property name="DisplayType" value="rangedBow"/> --><!-- <property name="DisplayType" value="rangedGun"/> -->
@@ -412,7 +437,7 @@
 		<!-- <property name="Delay" value="0.5"/> --> <!-- obsolete if rounds per minute exists. This is "charge" time? -->
 		
 		<!-- This is what you can shoot out of it... Flaming and exploding stuff seem glitchy in appearance and sound. -->
-		<property name="Magazine_items" value="ammoArrowStone,ammoArrowIron,ammoArrowSteelAP,ammoCrossbowBoltStone,ammoCrossbowBoltIron,ammoCrossbowBoltSteelAP"/>
+		<property name="Magazine_items" value="ammoArrowStone,ammoArrowIron,ammoArrowSteelAP,ammoCrossbowBoltStone,ammoCrossbowBoltIron,ammoCrossbowBoltSteelAP,flintArrowHeadGMLI,ammoDartIron"/>
 		<property name="Hitmask_override" value="Arrow"/>
 		<property name="Reload_time" value="0.1"/>
 		<property name="Sound_start" value="bow_fire"/> <!-- <property name="Sound_start" value="swoosh"/> -->
@@ -429,7 +454,13 @@
 		<property name="Class" value="Zoom"/>
 		<property name="Zoom_max_out" value="55"/>
 		<property name="Zoom_max_in" value="55"/>
-		<property name="ScopeCameraOffset" value="0,.0262,-.05"/>
+		<property name="CrosshairOnAim" value="true"/>
+		
+		<!-- Always comes with a scope... -->
+		<!-- <property name="Zoom_overlay" value="#Other/Items?Weapons/HUD/sniper_zoom_overlay.tga"/> -->
+		<property name="Zoom_max_out" value="30"/>
+		<property name="Zoom_max_in" value="20"/>
+		<!-- <property name="ScopeCameraOffset" value="0,.0262,-.05"/> --> <!-- This works for gun meshes, but screws up aiming on this model. -->
 	</property>
 
 	<effect_group name="gunRifleBowGMLI">
@@ -444,7 +475,7 @@
 		<passive_effect name="RoundsPerMinute" operation="base_set" value="450"/>
 		<passive_effect name="BurstRoundCount" operation="base_set" value="1"/>
 
-		<passive_effect name="MagazineSize" operation="base_set" value="12" tags="perkDeadEye"/>
+		<passive_effect name="MagazineSize" operation="base_set" value="50" tags="perkDeadEye"/>
 		<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="1" tags="perkDeadEye"/> <!-- 2.7s -->
 		<passive_effect name="ModSlots" operation="base_set" value="7,7,7,7,7,7" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
