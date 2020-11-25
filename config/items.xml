@@ -402,11 +402,27 @@
 	<!-- The tag "holdBreathAiming" causes player to lose stamina while aiming. -->
 	<property name="Tags" value="weapon,gun,ranged,bowDrawPenalty,archery,bow,perkArchery,barrelAttachments,sideAttachments,smallTopAttachments,mediumTopAttachments,largeTopAttachments,stock,magazine,firingMode,bottomAttachments,attPerception,perkDeadEye,attachmentsIncluded,canHaveCosmetic"/> 
 
-	<!-- How it's held and displayed -->
-	<property name="DisplayType" value="rangedLauncher"/><!--<property name="DisplayType" value="rangedBow"/> --><!-- <property name="DisplayType" value="rangedGun"/> -->
-	<property name="HoldType" value="10"/><!-- <property name="HoldType" value="69"/> --><!-- <property name="HoldType" value="77"/> -->
+	<!-- ############################################## -->
+	<!--          How it's held and displayed 			-->
+	<!-- ############################################## -->
+
+<!-- Can't figure out what this does... -->
+	<!-- <property name="DisplayType" value="rangedShotgun"/> -->
+	<!-- <property name="DisplayType" value="rangedLauncher"/> -->
+	<property name="DisplayType" value="rangedBow"/> 
+	<!-- <property name="DisplayType" value="rangedGun"/> -->
+
+<!-- How you hold it and DEFINITELY impacts reload style -->
+	<!-- <property name="HoldType" value="76"/> --> <!-- Auto shotgun -->
+	<!-- <property name="HoldType" value="10"/> --> <!-- Bazooka -->
+	<property name="HoldType" value="69"/> <!-- for crossbow -->
+	<!-- <property name="HoldType" value="77"/> --> <!-- Machine gun -->
+	
+<!-- Gun "skin" (what it looks like on-screen) -->
 	<!-- <property name="Meshfile" value="#Other/Items?Weapons/Ranged/Sharp Shooter/sharpShooterGunPrefab.prefab"/> -->
-	<property name="Meshfile" value="#Other/Items?Weapons/Ranged/RocketLauncher/rocketlauncherPrefab.prefab"/><!-- <property name="Meshfile" value="#Other/Items?Weapons/Ranged/Bows/AdvancedBow/AdvancedCompoundCrossbow/AdvancedCompoundCrossbowPrefab.prefab"/> -->
+	<!-- <property name="Meshfile" value="#Other/Items?Weapons/Ranged/Auto Shotgun/autoShotgunPrefab.prefab"/>-->
+	<!-- <property name="Meshfile" value="#Other/Items?Weapons/Ranged/RocketLauncher/rocketlauncherPrefab.prefab"/> --> 
+	<property name="Meshfile" value="#Other/Items?Weapons/Ranged/Bows/AdvancedBow/AdvancedCompoundCrossbow/AdvancedCompoundCrossbowPrefab.prefab"/>
 
 
 	<property name="Material" value="MRifleParts"/> <property name="Weight" value="6"/>
@@ -431,19 +447,22 @@
 	<property name="ShowQuality" value="true"/>
 
 	<property class="Action0">
-		<!-- <property name="Class" value="Ranged"/> --> <!-- This makes it fire "bullets" -->
-		<property name="Class" value="Catapult"/> <!-- This makes it fire "arrows" -->
+		<property name="Class" value="Ranged"/> <!-- This makes it fire "bullets" -->
+		<!-- <property name="Class" value="Catapult"/> --> <!-- This makes it fire "arrows" Comment it out to make arrows hidden. -->
 		<!-- Catapult might not be the best name for it but it can also be used for a slingshot -->
 		<!-- <property name="Delay" value="0.5"/> --> <!-- obsolete if rounds per minute exists. This is "charge" time? -->
 		
 		<!-- This is what you can shoot out of it... Flaming and exploding stuff seem glitchy in appearance and sound. -->
-		<property name="Magazine_items" value="ammoArrowStone,ammoArrowIron,ammoArrowSteelAP,ammoCrossbowBoltStone,ammoCrossbowBoltIron,ammoCrossbowBoltSteelAP,flintArrowHeadGMLI,ammoDartIron"/>
+		<property name="Magazine_items" value="ammoArrowStone,ammoArrowIron,ammoArrowSteelAP,ammoCrossbowBoltStone,ammoCrossbowBoltIron,ammoCrossbowBoltSteelAP,flintArrowHeadGMLI"/>
 		<property name="Hitmask_override" value="Arrow"/>
-		<property name="Reload_time" value="0.1"/>
+		<property name="Reload_time" value="1"/> <!-- Change "ReloadSpeedMultiplier" to speed this up -->
+		<property name="AutoReload" value="true"/>
+
+	<!-- Sounds and muzzle flash-->
 		<property name="Sound_start" value="bow_fire"/> <!-- <property name="Sound_start" value="swoosh"/> -->
 		<property name="Sound_loop" value="bow2_fire"/>
-		<property name="Sound_repeat" value=""/>
-		<property name="Sound_end" value=""/>
+		<property name="Sound_repeat" value="swoosh"/>
+		<property name="Sound_end" value="swoosh"/>
 		<property name="Sound_empty" value="dryfire"/>
 		<property name="Particles_muzzle_fire" value="nozzleflashuzi"/>
 		<property name="Particles_muzzle_fire_fpv" value="gunfire_sniper_fpv"/>
@@ -460,7 +479,7 @@
 		<!-- <property name="Zoom_overlay" value="#Other/Items?Weapons/HUD/sniper_zoom_overlay.tga"/> -->
 		<property name="Zoom_max_out" value="30"/>
 		<property name="Zoom_max_in" value="20"/>
-		<!-- <property name="ScopeCameraOffset" value="0,.0262,-.05"/> --> <!-- This works for gun meshes, but screws up aiming on this model. -->
+		<property name="ScopeCameraOffset" value="0,-0.05,-.05"/> <!-- This works for gun meshes, but screws up aiming on some models. -->
 	</property>
 
 	<effect_group name="gunRifleBowGMLI">
@@ -475,8 +494,8 @@
 		<passive_effect name="RoundsPerMinute" operation="base_set" value="450"/>
 		<passive_effect name="BurstRoundCount" operation="base_set" value="1"/>
 
-		<passive_effect name="MagazineSize" operation="base_set" value="50" tags="perkDeadEye"/>
-		<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="1" tags="perkDeadEye"/> <!-- 2.7s -->
+		<passive_effect name="MagazineSize" operation="base_set" value="1" tags="perkDeadEye"/>
+		<passive_effect name="ReloadSpeedMultiplier" operation="base_set" value="3" tags="perkDeadEye"/> <!-- 2.7s -->
 		<passive_effect name="ModSlots" operation="base_set" value="7,7,7,7,7,7" tier="1,2,3,4,5,6"/>
 		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
 		<passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
