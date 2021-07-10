@@ -66,6 +66,27 @@
             <property name="PickupJournalEntry" value="augmentGunsTip"/>
         </item_modifier>
 
+        <item_modifier name="kokainShoesGMLI" installable_tags="armor" modifier_tags="movement" type="attachment">
+            <property name="DisplayType" value="modArmorMobility"/>
+            <property name="CustomIcon" value="resourcePotassiumNitratePowder"/> <!-- <property name="CustomIconTint" value="ffb0b9"/> -->  
+
+            <property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
+            <property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+
+            <effect_group tiered="false">
+                <passive_effect name="Mobility" operation="perc_add" value=".04"/>
+                <passive_effect name="WalkSpeed" operation="perc_add" value="1.3"/>
+                <passive_effect name="RunSpeed" operation="perc_add" value="1.2"/>                
+                
+                <passive_effect name="StaminaChangeOT" operation="perc_add" value=".021" tags="walking"/>
+                <passive_effect name="StaminaChangeOT" operation="perc_add" value="1" tags="running"/>
+                <!-- <display_value name="dStaminaChangeOT" value=".0562"/> -->
+
+                <passive_effect name="JumpStrength" operation="perc_add" value="1.02"/>
+                <!-- <passive_effect name="StaminaLoss" operation="perc_subtract" value=".75" tags="jumping"/> -->
+            </effect_group>
+        </item_modifier>
+
 
     </append>
 </configs>

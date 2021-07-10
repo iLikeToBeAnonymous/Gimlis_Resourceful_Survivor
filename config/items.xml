@@ -447,10 +447,11 @@
 	<property name="ShowQuality" value="true"/>
 
 	<property class="Action0">
-		<property name="Class" value="Ranged"/> <!-- This makes it fire "bullets" -->
+		<!-- <property name="Class" value="Ranged"/> --> <!-- This makes it fire "bullets" -->
 		<!-- <property name="Class" value="Catapult"/> --> <!-- This makes it fire "arrows" Comment it out to make arrows hidden. -->
 		<!-- Catapult might not be the best name for it but it can also be used for a slingshot -->
-		<!-- <property name="Delay" value="0.5"/> --> <!-- obsolete if rounds per minute exists. This is "charge" time? -->
+		<property name="Class" value="Launcher"/>
+		<property name="Delay" value="0.5"/> <!-- obsolete if rounds per minute exists. This is "charge" time? -->
 		
 		<!-- This is what you can shoot out of it... Flaming and exploding stuff seem glitchy in appearance and sound. -->
 		<property name="Magazine_items" value="ammoArrowStone,ammoArrowIron,ammoArrowSteelAP,ammoCrossbowBoltStone,ammoCrossbowBoltIron,ammoCrossbowBoltSteelAP,flintArrowHeadGMLI"/>

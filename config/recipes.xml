@@ -24,18 +24,19 @@
 			<ingredient name="resourceWood" count="1"/>
 		</recipe>
 
-		<recipe name="ShavedWoodFletchingsGMLI" count="4">
+		<recipe name="ShavedWoodFletchingsGMLI" count="18">
 			<ingredient name="resourceWood" count="1"/>
 		</recipe>
 
 <!-- ####################################### -->
 <!--    Ammo (Arrows, Crossbow Bolts, etc)   -->
 <!-- ####################################### -->
-		<recipe name="ammoArrowStone" count="1" craft_time="3"> <!-- Just adds an additional recipe for an existing vanilla item -->
+		<!-- Just adds an additional recipe for an existing vanilla item -->
+<!-- 		<recipe name="ammoArrowStone" count="1" craft_time="3"> 
 			<ingredient name="resourceRockSmall" count="1"/>
 			<ingredient name="resourceWood" count="1"/>
 			<ingredient name="ShavedWoodFletchingsGMLI" count="3"/>
-		</recipe>
+		</recipe> -->
 
 		<recipe name="ammoArrowStone" count="1"  craft_time="0.25">
 			<ingredient name="flintArrowHeadGMLI" count="1"/>
@@ -105,6 +106,11 @@
 		<recipe name="thrownAmmoMolotovCocktail" count="1" craft_time="12">
 			<ingredient name="resourceCloth" count="1"/>
 			<ingredient name="drinkJarGrainAlcohol" count="1"/>
+		</recipe>
+
+		<recipe name="kokainShoesGMLI" count="1" craft_time="2">
+			<!-- <ingredient name="resourcePotassiumNitratePowder" count="1"/> -->
+			<ingredient name="resourceCropGoldenrodPlant" count="1"/>
 		</recipe>
 
 <!-- #######################################-->
