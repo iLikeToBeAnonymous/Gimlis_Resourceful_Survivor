@@ -100,12 +100,18 @@
 		</recipe>
 
 		<recipe name="foodRoastedRedCornGMLI" count="1" craft_time="20" craft_area="campfire" tags="perkMasterChef">
-			<ingredient name="foodCropGraceCorn" count="1"/>
+			<ingredient name="foodCropGraceCorn" count="5"/>
+		</recipe>
+		
+		<!-- https://7daystodie.fandom.com/wiki/Grain_Alcohol -->
+		<recipe name="drinkJarGrainAlcoholGMLI" count="1" craft_time="45">
+			<ingredient name="drinkJarRiverWater" count="1"/>
+			<ingredient name="foodCornMeal" count="1"/>
 		</recipe>
 
 		<recipe name="thrownAmmoMolotovCocktail" count="1" craft_time="12">
-			<ingredient name="resourceCloth" count="1"/>
-			<ingredient name="drinkJarGrainAlcohol" count="1"/>
+			<ingredient name="foodCornMeal" count="1"/>
+			<ingredient name="drinkJarGrainAlcoholGMLI" count="1"/>
 		</recipe>
 
 		<recipe name="kokainShoesGMLI" count="1" craft_time="2">
